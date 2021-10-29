@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { useState } from "react";
+import Title from "./components/Title";
+import Count from "./components/Count";
+import CounterButton from "./components/CounterButton";
+import styles from "./styles.module.css";
 function App() {
+  const [count, setCount] = useState(0);
+  function increaseCount(){
+    setCount(
+      count + 1
+    )
+  }
+  function decreaseCount(){
+    setCount(
+      count - 1
+    )
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.contentWrapper}>
+      <div className={styles.counterContainer}>
+        <Title title={"counter app"} />
+        <div className={styles.counterInputSection}>
+          <CounterButton onClickHandler={decreaseCount}>-</CounterButton>
+          <Count value={count} />
+          <CounterButton onClickHandler={increaseCount}>+</CounterButton>
+        </div>
+      </div>
     </div>
   );
 }
-
 export default App;

@@ -1,0 +1,19 @@
+.contentWrapper{
+    width:100vw;
+    height:100vh;
+    display:grid;
+    place-items:center;
+}
+
+.counterContainer{
+    padding:15px;
+    border-radius:10px;
+    box-shadow:1px 1px rgba(0,0,0,.6);
+}
+
+.counterInputSection{
+    margin-top:20px;
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+}
